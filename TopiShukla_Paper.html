@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="hi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SMART PADHAI – Exam Practice Paper – टोपी शुक्ला (Paper 1)</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font:17px/1.6 "Noto Sans Devanagari",Mangal,"Segoe UI",sans-serif;background:#f1f5f9;color:#1e293b}
+.w{max-width:860px;margin:auto;padding:12px}
+header{text-align:center;background:#1e3a8a;color:#fff;border-radius:12px;padding:16px 10px}
+header h1{margin:0;font-size:2rem;letter-spacing:2px;font-weight:900}header h2{margin:2px 0;font-size:1.2rem}header p{margin:4px 0 0;font-size:1rem}
+.nr{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0;align-items:center}
+.nr input{flex:1 1 150px;min-width:0;padding:12px;font:inherit;border:2px solid #94a3b8;border-radius:8px}
+.nr input[readonly]{background:#e2e8f0}
+.mic{border:0;background:#1e3a8a;color:#fff;font-size:1.2rem;border-radius:8px;min-width:48px;min-height:48px;cursor:pointer}
+.mic.on{background:#dc2626;animation:b 1s infinite}
+.nr .mic{margin-left:auto}
+#msg{text-align:center;font-weight:700;margin:6px 0}
+#bar{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;gap:6px;flex-wrap:wrap;background:#fff;border:2px solid #1e3a8a;border-radius:10px;padding:8px 12px;font-weight:700;margin-bottom:10px}
+#tm.warn{color:#dc2626;animation:b 1s infinite}@keyframes b{50%{opacity:.35}}
+.sec{margin:14px 0 6px;font-weight:800;color:#1e3a8a}
+.qb,.ab{width:100%;text-align:left;border:0;color:#fff;font:inherit;font-weight:700;padding:13px;border-radius:8px;cursor:pointer;min-height:48px;margin-top:8px}
+.qb{background:#dc2626}.qb.g{background:#16a34a}.qb:disabled{cursor:not-allowed;opacity:.9}
+.ab{background:#b91c1c;width:auto;display:block;margin:8px 0 0}.ab.g{background:#16a34a}
+.p{display:none;background:#fff;border:1px solid #cbd5e1;border-radius:8px;padding:12px;margin-top:2px}.p.open{display:block}
+.o{display:block;padding:10px;margin:6px 0;border:1px solid #cbd5e1;border-radius:8px;cursor:pointer}
+.o input{width:20px;height:20px;vertical-align:middle;margin-right:8px}
+textarea{width:100%;min-height:110px;padding:10px;font:inherit;border:2px solid #94a3b8;border-radius:8px}
+.tr{display:flex;gap:8px;align-items:flex-start}.tr textarea{flex:1}
+.ans{background:#ecfdf5;border-left:5px solid #16a34a;padding:10px;margin-top:6px;border-radius:6px}
+#sub{display:block;width:100%;margin:18px 0;padding:15px;font:inherit;font-weight:800;font-size:1.1rem;background:#1e3a8a;color:#fff;border:0;border-radius:10px;cursor:pointer;min-height:52px}
+#sub:disabled{background:#94a3b8;cursor:not-allowed}
+#res{display:none;background:#fff;border:3px solid #16a34a;border-radius:12px;padding:14px;overflow-x:auto}
+#res h3{margin-top:0}table{border-collapse:collapse;width:100%;font-size:.95rem}td,th{border:1px solid #cbd5e1;padding:6px;text-align:left;vertical-align:top}th{background:#e2e8f0}
+footer{text-align:center;background:#1e3a8a;color:#fff;border-radius:12px;padding:12px;margin-top:16px;font-weight:700}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #f59e0b}
+</style></head><body><div class="w">
+<header><h1>SMART PADHAI</h1><h2>Exam Practice Paper</h2><p>Class 10 | Hindi B | Sanchayan – टोपी शुक्ला | Paper 1 | 20 Marks | 25 मिनट</p></header>
+<div class="nr"><input id="nm" placeholder="विद्यार्थी का नाम" autocomplete="off" aria-label="नाम"><input id="cl" placeholder="कक्षा" autocomplete="off" aria-label="कक्षा"><button class="mic" id="m0" title="बोलकर भरें" aria-label="Voice">🎤</button></div>
+<div id="msg">कृपया अपना नाम और कक्षा भरकर परीक्षा प्रारंभ करें।</div>
+<div id="bar"><span>Paper 1 | 20 अंक</span><span>⏱ <b id="tm">25:00</b></span><span id="st">🔴 प्रतीक्षा</span></div>
+<div id="qs"></div>
+<button id="sub" disabled>Submit Test</button>
+<div id="res"></div>
+<footer>© Copyright | Created by Upendra Sir</footer></div>
+<script>
+var Q=[
+{m:1,s:"खंड-क: बहुविकल्पीय प्रश्न (1 अंक)",q:"'टोपी शुक्ला' पाठ के लेखक कौन हैं?",o:["प्रेमचंद","राही मासूम रज़ा","यशपाल","फणीश्वरनाथ रेणु"],a:1},
+{m:1,q:"टोपी शुक्ला का सबसे प्रिय मित्र कौन था?",o:["इफ़्फ़न","बलभद्र","सलीम","रफ़ीक़"],a:0},
+{m:1,q:"टोपी को इफ़्फ़न के घर में सबसे अधिक लगाव किससे था?",o:["इफ़्फ़न के पिता से","इफ़्फ़न की बहन से","इफ़्फ़न की दादी से","इफ़्फ़न के नौकर से"],a:2},
+{m:1,q:"'टोपी शुक्ला' पाठ किस विधा की रचना का अंश है?",o:["कहानी","नाटक","उपन्यास","निबंध"],a:2},
+{m:1,q:"टोपी और इफ़्फ़न की मित्रता किस संदेश को प्रकट करती है?",o:["धन की शक्ति","धर्म-जाति से ऊपर मानवीय प्रेम और सद्भाव","पढ़ाई में प्रतियोगिता","शहरी जीवन की सुविधा"],a:1},
+{m:2,s:"खंड-ख: अति लघु उत्तरीय प्रश्न (2 अंक)",q:"टोपी और इफ़्फ़न की मित्रता का आधार क्या था? (2-3 वाक्यों में लिखें)",
+ e:"टोपी और इफ़्फ़न की मित्रता सच्चे स्नेह और अपनेपन पर टिकी थी। दोनों के धर्म अलग थे, फिर भी उनके बीच धर्म की कोई दीवार नहीं थी।",
+ k:[{p:["अपनापन","आत्मीय","स्नेह","प्यार","प्रेम","सच्ची मित्रता","सच्चा दोस्त"],m:1},{p:["धर्म","मजहब","जाति","हिंदू","मुसलमान","भेद"],m:1}]},
+{m:2,q:"टोपी ने इफ़्फ़न से दादी बदलने की बात क्यों कही? (2-3 वाक्यों में लिखें)",
+ e:"टोपी को अपने घर में वैसा स्नेह नहीं मिलता था जैसा इफ़्फ़न की दादी से मिलता था। इसी स्नेह को पाने के लिए उसने दादी बदलने की बात कही।",
+ k:[{p:["स्नेह","प्यार","अपनापन","ममता","दुलार"],m:1},{p:["अपने घर","अपनी दादी","नहीं मिलता","उपेक्षा","तिरस्कार","अकेला"],m:1}]},
+{m:2,q:"इफ़्फ़न के पिता के तबादले का दोनों मित्रों पर क्या प्रभाव पड़ा? (2-3 वाक्यों में लिखें)",
+ e:"तबादले के कारण इफ़्फ़न को शहर छोड़कर जाना पड़ा और दोनों मित्र बिछड़ गए। इससे टोपी फिर अकेला और उदास हो गया।",
+ k:[{p:["तबादला","बदली","शहर छोड़","दूसरे शहर","चले गए","दूर","बिछड़","जुदा"],m:1},{p:["अकेला","अकेलापन","उदास","दुखी","दुख"],m:1}]},
+{m:3,s:"खंड-ग: लघु उत्तरीय प्रश्न (3 अंक)",q:"इफ़्फ़न की दादी का टोपी के प्रति व्यवहार कैसा था? (4-5 वाक्यों में लिखें)",
+ e:"इफ़्फ़न की दादी टोपी को अपने पोते की तरह स्नेह देती थीं। वे धर्म के आधार पर कोई भेदभाव नहीं करती थीं। टोपी को उनके पास अपनापन मिलता था, इसलिए उसे उनसे गहरा लगाव हो गया था।",
+ k:[{p:["स्नेह","प्यार","ममता","दुलार","अपनापन"],m:1},{p:["भेदभाव","धर्म","हिंदू","मुसलमान","समान","पोते"],m:1},{p:["लगाव","सुकून","अच्छा लगता","अपना","घर जैसा"],m:1}]},
+{m:3,q:"इफ़्फ़न की दादी की मृत्यु का टोपी पर क्या प्रभाव पड़ा? (4-5 वाक्यों में लिखें)",
+ e:"दादी की मृत्यु से टोपी को गहरा दुख हुआ। उसे लगा कि उसका स्नेह और सहारा छिन गया है। वह अकेला और सूना-सूना महसूस करने लगा।",
+ k:[{p:["दुख","दुखी","शोक","आघात","रोया","रो "],m:1},{p:["अकेला","अकेलापन","सूना","खालीपन"],m:1},{p:["स्नेह","प्यार","अपनापन","सहारा","ममता"],m:1}]},
+{m:3,q:"'टोपी शुक्ला' पाठ से हमें क्या संदेश मिलता है? (4-5 वाक्यों में लिखें)",
+ e:"यह पाठ बताता है कि धर्म और जाति के भेद से ऊपर इंसानियत होती है। सच्ची मित्रता और प्रेम सांप्रदायिक सोच को हरा सकते हैं। हमें आपसी सद्भाव और भाईचारे से रहना चाहिए।",
+ k:[{p:["सांप्रदायिक","धर्म","मजहब","हिंदू","मुसलमान","जाति"],m:1},{p:["मानवता","इंसानियत","मनुष्यता","मानवीय"],m:1},{p:["प्रेम","एकता","सद्भाव","भाईचारा","मित्रता","भेदभाव"],m:1}]}
+];
+var T=25*60,end,iv,started=false,done=false,last="nm",$=function(i){return document.getElementById(i)};
+var L=["क","ख","ग","घ"];
+function n(s){return (s||"").normalize("NFC").replace(/\u093C/g,"").replace(/ँ/g,"ं").replace(/[^\u0900-\u097F\w\s]/g," ").replace(/\s+/g," ").toLowerCase()+" "}
+function lev(a,b){var d=[],i,j;for(i=0;i<=a.length;i++){d[i]=[i]}for(j=1;j<=b.length;j++)d[0][j]=j;for(i=1;i<=a.length;i++)for(j=1;j<=b.length;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]==b[j-1]?0:1));return d[a.length][b.length]}
+function hit(txt,p){p=n(p).trim();if(txt.indexOf(p)>-1)return true;if(p.length>=5&&p.indexOf(" ")<0){var w=txt.trim().split(" ");for(var i=0;i<w.length;i++)if(Math.abs(w[i].length-p.length)<2&&lev(w[i],p)<=1)return true}return false}
+function build(){var h="",i;for(i=0;i<Q.length;i++){var x=Q[i];if(x.s)h+='<div class="sec">'+x.s+'</div>';
+h+='<button class="qb" id="qb'+i+'" disabled aria-expanded="false">🔴 प्रश्न '+(i+1)+' — ['+x.m+' अंक]</button><div class="p" id="qp'+i+'"><p><b>'+x.q+'</b></p>';
+if(x.o){x.o.forEach(function(t,j){h+='<label class="o"><input type="radio" name="r'+i+'" value="'+j+'">('+L[j]+') '+t+'</label>'})}
+else h+='<div class="tr"><textarea id="t'+i+'" placeholder="यहाँ टाइप करें या 🎤 दबाकर बोलें" aria-label="उत्तर"></textarea><button class="mic" data-t="t'+i+'" aria-label="Voice">🎤</button></div>';
+h+='</div><button class="ab" id="ab'+i+'" disabled>🔒 उत्तर देखें</button><div class="p" id="ap'+i+'"></div>'}
+$("qs").innerHTML=h;
+Q.forEach(function(x,i){$("qb"+i).onclick=function(){tog("qp"+i,"qb"+i)};$("ab"+i).onclick=function(){tog("ap"+i)}})}
+function tog(p,b){var e=$(p);e.classList.toggle("open");if(b)$(b).setAttribute("aria-expanded",e.classList.contains("open"))}
+var dt;function chk(){clearTimeout(dt);if(started)return;dt=setTimeout(function(){if($("nm").value.trim().length>=3&&$("cl").value.trim().length>=1)start()},1000)}
+function start(){if(started)return;started=true;$("nm").readOnly=$("cl").readOnly=true;
+Q.forEach(function(x,i){var b=$("qb"+i);b.disabled=false;b.className="qb g";b.textContent="🟢 प्रश्न "+(i+1)+" — ["+x.m+" अंक]";$("qp"+i).classList.add("open")});
+$("sub").disabled=false;$("msg").textContent="परीक्षा प्रारंभ हो गई है।";$("st").textContent="🟢 EXAM ACTIVE";
+end=Date.now()+T*1000;tick();iv=setInterval(tick,1000)}
+function tick(){var r=Math.max(0,Math.round((end-Date.now())/1000)),m=Math.floor(r/60),s=r%60;$("tm").textContent=(m<10?"0":"")+m+":"+(s<10?"0":"")+s;if(r<=300)$("tm").className="warn";if(r<=0)submit(true)}
+function submit(auto){if(done||!started)return;done=true;clearInterval(iv);var tot=0,rows="";
+Q.forEach(function(x,i){var got=0,det="";
+if(x.o){var r=document.querySelector('input[name=r'+i+']:checked');got=(r&&+r.value===x.a)?x.m:0;det=r?"चुना: ("+L[+r.value]+")":"उत्तर नहीं दिया";}
+else{var tx=n($("t"+i).value),ok=[],no=[];if(tx.trim()){x.k.forEach(function(k){var f=k.p.some(function(p){return hit(tx,p)});if(f){got+=k.m;ok.push("✔ "+k.p[0])}else no.push("✘ "+k.p[0])})}else no=x.k.map(function(k){return "✘ "+k.p[0]});
+got=Math.min(got,x.m);det=(tx.trim()?"":"उत्तर नहीं दिया<br>")+"मिले बिंदु: "+(ok.join(", ")||"—")+"<br>छूटे बिंदु: "+(no.join(", ")||"—")}
+tot+=got;rows+="<tr><td>"+(i+1)+"</td><td>"+got+" / "+x.m+"</td><td>"+det+"</td></tr>";
+var a=$("ap"+i);a.innerHTML=x.o?'<div class="ans"><b>सही उत्तर: ('+L[x.a]+') '+x.o[x.a]+'</b></div>':'<div class="ans"><b>आदर्श उत्तर:</b> '+x.e+'</div>';
+var b=$("ab"+i);b.disabled=false;b.className="ab g";b.textContent="🟢 उत्तर देखें"});
+var pc=Math.round(tot/20*1000)/10,bd=pc>=90?"उत्कृष्ट":pc>=75?"बहुत अच्छा":pc>=60?"अच्छा":pc>=40?"संतोषजनक":"और अभ्यास की आवश्यकता";
+$("res").style.display="block";$("res").innerHTML="<h3>"+(auto?"समय समाप्त – ":"")+"परिणाम</h3><p><b>"+$("nm").value+"</b> (कक्षा "+$("cl").value+")</p><p style='font-size:1.4rem'><b>अंक: "+tot+" / 20 &nbsp; | &nbsp; "+pc+"%</b> – "+bd+"</p><table><tr><th>प्र.</th><th>अंक</th><th>विवरण</th></tr>"+rows+"</table><p><small>यह स्वचालित स्मार्ट मूल्यांकन है। अंतिम अंकों के लिए शिक्षक से समीक्षा कराएँ। सभी 'उत्तर देखें' बटन अब खुल गए हैं।</small></p>";
+$("sub").disabled=true;$("st").textContent="🏁 परीक्षा पूर्ण";document.querySelectorAll("textarea,.o input").forEach(function(e){e.disabled=true});$("res").scrollIntoView({behavior:"smooth"})}
+var SR=window.SpeechRecognition||window.webkitSpeechRecognition,rec=null,cur=null;
+function mic(btn,tid){if(!SR){alert("Voice is browser me available nahi, kripya type karein");return}
+if(rec){rec.stop();return}var el=$(tid);if(!el||el.readOnly||el.disabled)return;
+rec=new SR();rec.lang="hi-IN";rec.interimResults=false;cur=btn;btn.classList.add("on");
+rec.onresult=function(e){var t=e.results[e.results.length-1][0].transcript,s=el.selectionStart==null?el.value.length:el.selectionStart,v=el.value;el.value=v.slice(0,s)+(s&&v[s-1]!=" "?" ":"")+t+v.slice(el.selectionEnd==null?s:el.selectionEnd);if(el.id=="nm"||el.id=="cl")chk()};
+rec.onend=rec.onerror=function(){if(cur)cur.classList.remove("on");rec=null;cur=null};
+try{rec.start()}catch(x){rec=null;btn.classList.remove("on")}}
+build();
+(function(){var s=0;Q.forEach(function(x){s+=x.m});if(s!==20)console.warn("Marks mismatch",s)})();
+["nm","cl"].forEach(function(i){$(i).addEventListener("input",chk);$(i).addEventListener("focus",function(){last=i})});
+$("m0").onclick=function(){mic(this,last)};
+$("qs").addEventListener("click",function(e){var b=e.target.closest(".mic");if(b)mic(b,b.getAttribute("data-t"))});
+$("sub").onclick=function(){if(confirm("क्या आप टेस्ट सबमिट करना चाहते हैं?"))submit(false)};
+</script></body></html>
